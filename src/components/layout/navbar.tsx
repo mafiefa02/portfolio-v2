@@ -1,6 +1,7 @@
-import React from 'react';
 import { Button } from '-/components/ui/button';
 import Link from 'next/link';
+import React from 'react';
+
 import NavbarDropdown from './navbar/dropdown';
 
 const menus = [
@@ -26,7 +27,7 @@ export default function Navbar() {
           <span className='hidden pl-1 md:inline-block'>Abdurrahman</span>
         </Button>
 
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-2 md:gap-4'>
           {menus.map((menu) => (
             <Button
               variant='link'
@@ -47,6 +48,14 @@ export default function Navbar() {
             >
               Contact me!
             </Link>
+          </Button>
+
+          <Button
+            size='icon'
+            variant='ghost'
+            className='md:hidden'
+          >
+            CV
           </Button>
 
           <NavbarDropdown />
