@@ -6,11 +6,27 @@ import { ChevronDown, Newspaper, Wrench, PhoneCall } from 'lucide-react';
 import { Separator } from '-/components/ui/separator';
 import AnimatedDiv from '-/components/ui/animated/div';
 
-function DropdownSheet() {
+function DropdownSheet({ open }: { open: boolean }) {
+  const animationVariants = {
+    show: {
+      opacity: 1,
+      y: 0,
+      display: 'block',
+    },
+    hide: {
+      opacity: 0,
+      y: -10,
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  };
+
   return (
     <AnimatedDiv
-      initial={{ y: -15, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={'hide'}
+      variants={animationVariants}
+      animate={open ? 'show' : 'hide'}
       transition={{ duration: 0.15 }}
       className='container absolute left-0 top-[72px] z-50 flex w-full flex-col gap-2 bg-background/90 py-4 text-foreground backdrop-blur md:hidden'
     >
@@ -58,12 +74,12 @@ export default function NavbarDropdown() {
         <ChevronDown
           className={`${
             open ? 'rotate-180' : 'rotate-0'
-          } pl-1 transition-transform ease-in-out`}
+          } transition-transform ease-in-out`}
           size={16}
         />
       </Button>
 
-      {open ? <DropdownSheet /> : null}
+      <DropdownSheet open={open} />
     </>
   );
 }

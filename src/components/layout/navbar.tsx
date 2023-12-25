@@ -16,7 +16,7 @@ const menus = [
 
 export default function Navbar() {
   return (
-    <nav className='sticky top-0 z-50 h-full w-full bg-background/90 py-4 backdrop-blur'>
+    <nav className='sticky top-0 z-[99] h-full w-full bg-background/90 py-4 backdrop-blur'>
       <div className='container flex w-full items-center justify-between'>
         <Button
           variant='link'
