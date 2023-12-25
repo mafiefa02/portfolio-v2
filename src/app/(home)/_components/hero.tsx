@@ -23,15 +23,14 @@ export default function Hero() {
         <Greetings />
 
         <TextH1 className='bg-gradient-to-r from-indigo-600 to-primary bg-clip-text text-transparent'>
-          Afief <span className='xs:hidden'>Abd.</span>{' '}
-          <span className='hidden xs:inline-block'>Abdurrahman</span>
+          Afief Abdurrahman
         </TextH1>
 
-        <TextH4 className='hidden font-light lg:inline-block'>
+        <TextH4 className='hidden text-balance font-light lg:inline-block'>
           a software engineer / machine learning engineer
         </TextH4>
 
-        <TextH4 className='font-light lg:hidden'>
+        <TextH4 className='text-balance font-light lg:hidden'>
           a physics stud and an swe / mle
         </TextH4>
 
