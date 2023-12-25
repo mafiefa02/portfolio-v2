@@ -60,7 +60,7 @@ const config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       screens: {
-        xs: '420px',
+        xs: '480px',
       },
       keyframes: {
         'accordion-down': {
