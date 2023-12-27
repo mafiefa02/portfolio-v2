@@ -2,6 +2,7 @@ import { Button } from '-/components/ui/button';
 import TextH1 from '-/components/ui/typography/h1';
 import TextH4 from '-/components/ui/typography/h4';
 import { DownloadIcon } from 'lucide-react';
+import Link from 'next/link';
 
 import Greetings from './hero/greetings';
 import HobbyIcons from './hero/hobby-icons';
@@ -38,11 +39,19 @@ export default function Hero() {
           <Button
             className='hidden w-full items-center gap-2 md:flex'
             variant='secondary'
+            asChild
           >
-            <DownloadIcon size={16} /> Download CV
+            <Link href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}>
+              <DownloadIcon size={16} /> Download CV
+            </Link>
           </Button>
 
-          <Button className='w-full xs:max-w-96'>Contact me!</Button>
+          <Button
+            className='w-full xs:max-w-96'
+            asChild
+          >
+            <Link href={'/contact'}>Contact me!</Link>
+          </Button>
         </div>
       </div>
     </div>

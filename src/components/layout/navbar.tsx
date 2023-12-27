@@ -58,8 +58,9 @@ export default function Navbar() {
             size='icon'
             variant='ghost'
             className='md:hidden'
+            asChild
           >
-            CV
+            <Link href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}>CV</Link>
           </Button>
 
           <NavbarDropdown />
