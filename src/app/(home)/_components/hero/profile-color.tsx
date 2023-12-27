@@ -1,9 +1,14 @@
 'use client';
 
 import AnimatedDiv from '-/components/ui/animated/div';
+import { useMounted } from '-/hooks/useMounted';
 import React from 'react';
 
 export default function ProfileColor() {
+  const mounted = useMounted();
+
+  if (!mounted) return null;
+
   return (
     <>
       <AnimatedDiv

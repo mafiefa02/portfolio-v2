@@ -1,6 +1,7 @@
 'use client';
 
 import TextH4 from '-/components/ui/typography/h4';
+import { useMounted } from '-/hooks/useMounted';
 import React from 'react';
 
 function GetTimeOfDay(): string {
@@ -17,5 +18,9 @@ function GetTimeOfDay(): string {
 }
 
 export default function Greetings() {
+  const mounted = useMounted();
+
+  if (!mounted) return <TextH4 className='font-light'>Hello! 👋🏻 I am</TextH4>;
+
   return <TextH4 className='font-light'>Good {GetTimeOfDay()}! 👋🏻 I am</TextH4>;
 }
