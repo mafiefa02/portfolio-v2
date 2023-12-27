@@ -4,7 +4,9 @@ import TextP from '-/components/ui/typography/p';
 import { DownloadIcon } from 'lucide-react';
 import React from 'react';
 
-export default function Miscellaneous() {
+import ContactForm from './contact/form';
+
+export default function Contact() {
   return (
     <div className='container flex flex-col items-start gap-16 lg:flex-row lg:gap-24'>
       <div className='flex w-full flex-col gap-4 text-balance text-center lg:gap-2 lg:text-left'>
@@ -28,9 +30,7 @@ export default function Miscellaneous() {
         </div>
       </div>
 
-      <div className='flex w-full flex-col justify-start'>
-        TODO! Contact form
-      </div>
+      <ContactForm />
     </div>
   );
 }

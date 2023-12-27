@@ -1,6 +1,6 @@
 import About from './_components/about';
+import Contact from './_components/contact';
 import Hero from './_components/hero';
-import Miscellaneous from './_components/miscellaneous';
 import Works from './_components/works';
 
 export default function Home() {
@@ -28,10 +28,10 @@ export default function Home() {
       </section>
 
       <section
-        id='miscellaneous'
+        id='contact'
         className='w-full pb-16 pt-4 lg:pb-28'
       >
-        <Miscellaneous />
+        <Contact />
       </section>
     </main>
   );
