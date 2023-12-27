@@ -60,7 +60,12 @@ export default function Navbar() {
             className='md:hidden'
             asChild
           >
-            <Link href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}>CV</Link>
+            <Link
+              prefetch={false}
+              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+            >
+              CV
+            </Link>
           </Button>
 
           <NavbarDropdown />

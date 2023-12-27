@@ -25,7 +25,10 @@ export default function Contact() {
             className='flex flex-row items-center gap-2 lg:w-full'
             asChild
           >
-            <Link href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}>
+            <Link
+              prefetch={false}
+              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+            >
               <DownloadIcon size={16} /> Maybe download my CV?
             </Link>
           </Button>

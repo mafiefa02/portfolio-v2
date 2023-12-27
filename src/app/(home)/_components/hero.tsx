@@ -41,7 +41,10 @@ export default function Hero() {
             variant='secondary'
             asChild
           >
-            <Link href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}>
+            <Link
+              prefetch={false}
+              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+            >
               <DownloadIcon size={16} /> Download CV
             </Link>
           </Button>
