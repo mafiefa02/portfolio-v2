@@ -1,7 +1,7 @@
 import { cn } from '-/lib/utils';
-import React, { type PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
-export default function TextP(
+export default function TextCode(
   props: PropsWithChildren<React.HTMLAttributes<HTMLElement>>,
 ) {
   return (

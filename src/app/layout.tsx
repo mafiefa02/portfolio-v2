@@ -1,9 +1,8 @@
 import '-/styles/globals.css';
 
+import { TRPCReactProvider } from '-/trpc/react';
 import { DM_Sans } from 'next/font/google';
 import { cookies } from 'next/headers';
-
-import { TRPCReactProvider } from '-/trpc/react';
 
 const dm = DM_Sans({
   subsets: ['latin'],
@@ -22,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`${dm.className} dark`}>
         <TRPCReactProvider cookies={cookies().toString()}>
           {children}

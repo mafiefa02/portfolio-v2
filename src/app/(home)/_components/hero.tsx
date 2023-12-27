@@ -34,15 +34,15 @@ export default function Hero() {
           a physics stud and an swe / mle
         </TextH4>
 
-        <div className='mt-4 hidden w-full items-center justify-center gap-4 md:flex'>
+        <div className='mt-4 flex w-full items-center justify-center gap-4'>
           <Button
-            className='flex w-full items-center gap-2'
+            className='hidden w-full items-center gap-2 md:flex'
             variant='secondary'
           >
             <DownloadIcon size={16} /> Download CV
           </Button>
 
-          <Button className='w-full'>Contact me!</Button>
+          <Button className='w-full xs:max-w-96'>Contact me!</Button>
         </div>
       </div>
     </div>

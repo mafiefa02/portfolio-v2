@@ -18,7 +18,7 @@ export default function ProfileImage() {
         quality={1}
       />
       <Image
-        className='absolute right-8 top-8 opacity-80 blur-sm grayscale'
+        className='absolute right-8 top-24 opacity-80 blur-sm grayscale'
         src={selfPhoto}
         alt='self photo'
         quality={1}

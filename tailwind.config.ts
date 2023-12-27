@@ -19,6 +19,12 @@ const config = {
       },
     },
     extend: {
+      dropShadow: {
+        smallGlowPrimary: '0px 65px 80px hsl(var(--primary))',
+        smallGlowIndigo: '0px 65px 80px rgba(99, 102, 241)',
+        subtleGlowPrimary: '0px 35px 189px hsl(var(--primary))',
+        subtleGlowIndigo: '0px 35px 189px rgba(99, 102, 241)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

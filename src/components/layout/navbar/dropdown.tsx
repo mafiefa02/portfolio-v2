@@ -3,7 +3,13 @@
 import AnimatedDiv from '-/components/ui/animated/div';
 import { Button } from '-/components/ui/button';
 import { Separator } from '-/components/ui/separator';
-import { ChevronDown, Newspaper, PhoneCall, Wrench } from 'lucide-react';
+import {
+  ChevronDown,
+  HelpCircle,
+  Newspaper,
+  PhoneCall,
+  Wrench,
+} from 'lucide-react';
 import { useState } from 'react';
 
 function DropdownSheet({ open }: { open: boolean }) {
@@ -32,7 +38,7 @@ function DropdownSheet({ open }: { open: boolean }) {
     >
       <Separator className='-mt-4 mb-4' />
 
-      <h1 className='xs:text-xl font-black'>What are you looking for?</h1>
+      <h1 className='font-black xs:text-xl'>What are you looking for?</h1>
 
       <div className='flex w-full flex-row flex-wrap items-center gap-x-12'>
         <Button
@@ -54,6 +60,13 @@ function DropdownSheet({ open }: { open: boolean }) {
           className='flex flex-row items-center gap-2 p-0 text-foreground'
         >
           <Wrench size={16} /> Tools
+        </Button>
+
+        <Button
+          variant='link'
+          className='flex flex-row items-center gap-2 p-0 text-foreground'
+        >
+          <HelpCircle size={16} /> About
         </Button>
       </div>
     </AnimatedDiv>
