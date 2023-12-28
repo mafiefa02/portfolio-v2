@@ -62,7 +62,9 @@ export default function Navbar() {
           >
             <Link
               prefetch={false}
-              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+              href={
+                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
+              }
             >
               CV
             </Link>

@@ -27,7 +27,9 @@ export default function Contact() {
           >
             <Link
               prefetch={false}
-              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+              href={
+                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
+              }
             >
               <DownloadIcon size={16} /> Maybe download my CV?
             </Link>

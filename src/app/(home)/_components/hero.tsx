@@ -43,7 +43,9 @@ export default function Hero() {
           >
             <Link
               prefetch={false}
-              href={'/CV_ATS_SoftwareEngineering-Websites.pdf'}
+              href={
+                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
+              }
             >
               <DownloadIcon size={16} /> Download CV
             </Link>
