@@ -17,8 +17,7 @@ import {
   TooltipTrigger,
 } from '-/components/ui/tooltip';
 import TextH2 from '-/components/ui/typography/h2';
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import Image, { StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import React from 'react';
 
 export default function TechStacks() {
