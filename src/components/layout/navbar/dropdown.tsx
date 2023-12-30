@@ -10,6 +10,7 @@ import {
   PhoneCall,
   Wrench,
 } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 function DropdownSheet({ open }: { open: boolean }) {
@@ -44,8 +45,11 @@ function DropdownSheet({ open }: { open: boolean }) {
         <Button
           variant='link'
           className='flex flex-row items-center gap-2 p-0 text-foreground'
+          asChild
         >
-          <PhoneCall size={16} /> Contact
+          <Link href={'/contact'}>
+            <PhoneCall size={16} /> Contact
+          </Link>
         </Button>
 
         <Button

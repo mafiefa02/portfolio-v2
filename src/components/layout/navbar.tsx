@@ -26,9 +26,13 @@ export default function Navbar() {
         <Button
           variant='link'
           className='pl-0 text-lg font-black text-foreground'
+          asChild
         >
-          Afief<span className='md:hidden'>&apos;s</span>
-          <span className='hidden pl-1 md:inline-block'>Abdurrahman</span>
+          <Link href={'/'}>
+            {' '}
+            Afief<span className='md:hidden'>&apos;s</span>
+            <span className='hidden pl-1 md:inline-block'>Abdurrahman</span>
+          </Link>
         </Button>
 
         <div className='flex items-center gap-2 md:gap-4'>

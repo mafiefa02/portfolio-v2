@@ -5,7 +5,7 @@ import { DownloadIcon } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
-import ContactForm from './contact/form';
+import ContactField from './contact/field';
 
 export default function Contact() {
   return (
@@ -44,7 +44,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <ContactForm />
+      <ContactField />
     </div>
   );
 }
