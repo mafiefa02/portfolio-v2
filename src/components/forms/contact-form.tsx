@@ -1,7 +1,7 @@
 'use client';
 
 import { z } from 'zod';
-import React from 'react';
+import React, { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema } from './contact/schema';
 
@@ -19,14 +19,45 @@ import { Textarea } from '-/components/ui/textarea';
 import { Button } from '-/components/ui/button';
 import { useForm } from 'react-hook-form';
 import { SendHorizonalIcon } from 'lucide-react';
+import { api } from '-/trpc/react';
+import { useToast } from '-/components/ui/use-toast';
 
 export default function ContactForm() {
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      email: '',
+      name: '',
+      message: '',
+    },
   });
 
+  const mutation = api.email.send.useMutation();
+
   function onSubmit(values: z.infer<typeof contactSchema>) {
-    console.log(values);
+    setLoading(true);
+
+    mutation.mutate(values, {
+      onSettled: () => setLoading(false),
+      onError: () =>
+        toast({
+          title: 'Failed to send message!',
+          description: 'Please try again after a while.',
+          variant: 'destructive',
+        }),
+      onSuccess: () => {
+        form.reset();
+        return toast({
+          title: 'Message sent!',
+          description: 'Thanks a lot! Please wait for a follow up from me 😁',
+        });
+      },
+    });
+
+    return;
   }
 
   return (
@@ -98,8 +129,15 @@ export default function ContactForm() {
         <Button
           type='submit'
           className='flex w-full items-center gap-2'
+          disabled={loading}
         >
-          Send the message <SendHorizonalIcon size={16} />
+          {loading ? (
+            'Sending message, please wait.'
+          ) : (
+            <>
+              Send the message <SendHorizonalIcon size={16} />
+            </>
+          )}
         </Button>
       </form>
     </Form>

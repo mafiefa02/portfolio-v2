@@ -26,7 +26,7 @@ const contacts = [
 
 export default function ContactPage() {
   return (
-    <div className='container flex flex-col gap-8'>
+    <div className='container flex flex-col gap-8 lg:pb-16'>
       <div className='flex flex-col gap-4'>
         <TextH1>
           Let&apos;s have a talk! <span className='hidden sm:inline'>😁👋🏻</span>
