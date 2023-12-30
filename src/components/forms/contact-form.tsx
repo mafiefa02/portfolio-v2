@@ -4,6 +4,7 @@ import { z } from 'zod';
 import React, { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema } from './contact/schema';
+import { usePathname } from 'next/navigation';
 
 import {
   Form,
@@ -25,6 +26,7 @@ import { useToast } from '-/components/ui/use-toast';
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const pathname = usePathname();
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -76,7 +78,7 @@ export default function ContactForm() {
                 <Input
                   id='name'
                   autoComplete='name'
-                  autoFocus
+                  autoFocus={pathname !== '/'}
                   className='w-full'
                   {...field}
                 />
