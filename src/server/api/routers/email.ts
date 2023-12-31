@@ -1,5 +1,5 @@
 import { createTRPCRouter, publicProcedure } from "-/server/api/trpc";
-import { contactSchema } from "-/components/forms/contact/schema";
+import { contactSchema } from "-/components/forms/schema/contact";
 import { Resend } from "resend";
 import EmailTemplate from "-/components/email-template";
 import { TRPCError } from "@trpc/server";
