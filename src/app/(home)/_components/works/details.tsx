@@ -32,8 +32,10 @@ export default function WorkDetails({
       </TextP>
 
       <div className="text-md flex flex-row flex-wrap items-center justify-center gap-2">
-        {stacks.map((stack) => (
-          <Badge variant="secondary">{stack}</Badge>
+        {stacks.map((stack, i) => (
+          <Badge key={i} variant="secondary">
+            {stack}
+          </Badge>
         ))}
       </div>
 

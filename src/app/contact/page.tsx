@@ -47,8 +47,9 @@ export default function ContactPage() {
             <p>or contact me in</p>
 
             <div className="flex flex-row flex-wrap items-center justify-center gap-4">
-              {contacts.map((contact) => (
+              {contacts.map((contact, i) => (
                 <Button
+                  key={i}
                   variant="link"
                   className="flex flex-row items-center gap-2 p-0 text-foreground"
                   asChild
@@ -65,8 +66,9 @@ export default function ContactPage() {
         <div className="hidden w-1/5 flex-col gap-4 lg:flex">
           <p className="text-lg">Also find me on</p>
 
-          {contacts.map((contact) => (
+          {contacts.map((contact, i) => (
             <Button
+              key={i}
               variant="secondary"
               className="flex flex-row items-center gap-2"
               asChild

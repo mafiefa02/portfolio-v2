@@ -96,6 +96,7 @@ export default function Works() {
       <div className="hidden flex-row gap-8 lg:flex lg:flex-col lg:gap-16">
         {works.map((work, i) => (
           <div
+            key={i}
             className={cn(
               "relative mt-16 flex flex-col items-center justify-center gap-8 lg:gap-12",
               (i + 1) % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row",
