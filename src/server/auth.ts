@@ -4,10 +4,9 @@ import {
   type DefaultSession,
   type NextAuthOptions,
 } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
 
-import { env } from "-/env";
 import { db } from "-/server/db";
+import Credentials from "next-auth/providers/credentials";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -19,15 +18,15 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
-      // ...other properties
-      // role: UserRole;
+      username: string;
+      password: string;
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User {
+    username: string;
+    password: string;
+  }
 }
 
 /**
@@ -47,9 +46,34 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(db),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    Credentials({
+      name: "Credentials",
+      credentials: {
+        username: { label: "username", type: "text" },
+        password: { label: "password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials?.username || !credentials.password)
+          throw new Error("Please provide a username and a password!");
+
+        const { username, password } = credentials as {
+          username: string;
+          password: string;
+        };
+
+        const user = await db.user.findUnique({
+          where: { username },
+        });
+
+        if (!user)
+          throw new Error(
+            `We can't find an account with username ${username}.`,
+          );
+
+        if (user.password !== password) throw new Error(`Wrong password!`);
+
+        return user;
+      },
     }),
     /**
      * ...add more providers here.
