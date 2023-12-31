@@ -36,8 +36,9 @@ export default function Navbar() {
         </Button>
 
         <div className="flex items-center gap-2 md:gap-4">
-          {menus.map((menu) => (
+          {menus.map((menu, i) => (
             <Button
+              key={i}
               variant="link"
               className="hidden text-foreground md:flex"
               asChild
