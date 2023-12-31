@@ -1,5 +1,5 @@
-import { cn } from '-/lib/utils';
-import React, { PropsWithChildren } from 'react';
+import { cn } from "-/lib/utils";
+import React, { type PropsWithChildren } from "react";
 
 export default function TextCode(
   props: PropsWithChildren<React.HTMLAttributes<HTMLElement>>,
@@ -8,7 +8,7 @@ export default function TextCode(
     <code
       {...props}
       className={cn(
-        'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
+        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
         props.className,
       )}
     >

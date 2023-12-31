@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { z } from 'zod';
-import React, { useState } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { contactSchema } from './contact/schema';
-import { usePathname } from 'next/navigation';
+import { type z } from "zod";
+import React, { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema } from "./contact/schema";
+import { usePathname } from "next/navigation";
 
 import {
   Form,
@@ -14,14 +14,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '-/components/ui/form';
-import { Input } from '-/components/ui/input';
-import { Textarea } from '-/components/ui/textarea';
-import { Button } from '-/components/ui/button';
-import { useForm } from 'react-hook-form';
-import { SendHorizonalIcon } from 'lucide-react';
-import { api } from '-/trpc/react';
-import { useToast } from '-/components/ui/use-toast';
+} from "-/components/ui/form";
+import { Input } from "-/components/ui/input";
+import { Textarea } from "-/components/ui/textarea";
+import { Button } from "-/components/ui/button";
+import { useForm } from "react-hook-form";
+import { SendHorizonalIcon } from "lucide-react";
+import { api } from "-/trpc/react";
+import { useToast } from "-/components/ui/use-toast";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -31,9 +31,9 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      email: '',
-      name: '',
-      message: '',
+      email: "",
+      name: "",
+      message: "",
     },
   });
 
@@ -46,15 +46,15 @@ export default function ContactForm() {
       onSettled: () => setLoading(false),
       onError: () =>
         toast({
-          title: 'Failed to send message!',
-          description: 'Please try again after a while.',
-          variant: 'destructive',
+          title: "Failed to send message!",
+          description: "Please try again after a while.",
+          variant: "destructive",
         }),
       onSuccess: () => {
         form.reset();
         return toast({
-          title: 'Message sent!',
-          description: 'Thanks a lot! Please wait for a follow up from me 😁',
+          title: "Message sent!",
+          description: "Thanks a lot! Please wait for a follow up from me 😁",
         });
       },
     });
@@ -64,22 +64,19 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
-        className='space-y-8'
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
+      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name='name'
+          name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor='name'>What should I call you?</FormLabel>
+              <FormLabel htmlFor="name">What should I call you?</FormLabel>
               <FormControl>
                 <Input
-                  id='name'
-                  autoComplete='name'
-                  autoFocus={pathname !== '/'}
-                  className='w-full'
+                  id="name"
+                  autoComplete="name"
+                  autoFocus={pathname !== "/"}
+                  className="w-full"
                   {...field}
                 />
               </FormControl>
@@ -90,15 +87,15 @@ export default function ContactForm() {
 
         <FormField
           control={form.control}
-          name='email'
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor='email'>Your e-mail address</FormLabel>
+              <FormLabel htmlFor="email">Your e-mail address</FormLabel>
               <FormControl>
                 <Input
-                  id='email'
-                  autoComplete='email'
-                  className='w-full'
+                  id="email"
+                  autoComplete="email"
+                  className="w-full"
                   {...field}
                 />
               </FormControl>
@@ -113,15 +110,12 @@ export default function ContactForm() {
 
         <FormField
           control={form.control}
-          name='message'
+          name="message"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Leave me a message!</FormLabel>
               <FormControl>
-                <Textarea
-                  className='w-full'
-                  {...field}
-                />
+                <Textarea className="w-full" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -129,12 +123,12 @@ export default function ContactForm() {
         />
 
         <Button
-          type='submit'
-          className='flex w-full items-center gap-2'
+          type="submit"
+          className="flex w-full items-center gap-2"
           disabled={loading}
         >
           {loading ? (
-            'Sending message, please wait.'
+            "Sending message, please wait."
           ) : (
             <>
               Send the message <SendHorizonalIcon size={16} />

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import AnimatedDiv from '-/components/ui/animated/div';
-import { useMounted } from '-/hooks/useMounted';
-import React from 'react';
+import AnimatedDiv from "-/components/ui/animated/div";
+import { useMounted } from "-/hooks/useMounted";
+import React from "react";
 
 export default function ProfileColor() {
   const mounted = useMounted();
@@ -17,10 +17,10 @@ export default function ProfileColor() {
         transition={{
           duration: 2,
           repeat: Infinity,
-          repeatType: 'reverse',
-          ease: 'easeInOut',
+          repeatType: "reverse",
+          ease: "easeInOut",
         }}
-        className='absolute z-50 h-48 w-48 rounded-full bg-indigo-800 mix-blend-color blur-3xl'
+        className="absolute z-50 h-48 w-48 rounded-full bg-indigo-800 mix-blend-color blur-3xl"
       />
       <AnimatedDiv
         initial={{ top: 88, left: 80 }}
@@ -28,10 +28,10 @@ export default function ProfileColor() {
         transition={{
           duration: 2,
           repeat: Infinity,
-          repeatType: 'mirror',
-          ease: 'easeInOut',
+          repeatType: "mirror",
+          ease: "easeInOut",
         }}
-        className='absolute z-50 h-60 w-60 rounded-full bg-primary/60 mix-blend-color blur-3xl'
+        className="absolute z-50 h-60 w-60 rounded-full bg-primary/60 mix-blend-color blur-3xl"
       />
     </>
   );

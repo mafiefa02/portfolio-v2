@@ -1,6 +1,6 @@
-import React from 'react';
-import { z } from 'zod';
-import { contactSchema } from './forms/contact/schema';
+import React from "react";
+import { type z } from "zod";
+import { type contactSchema } from "./forms/contact/schema";
 
 export default function EmailTemplate(props: z.infer<typeof contactSchema>) {
   return (
