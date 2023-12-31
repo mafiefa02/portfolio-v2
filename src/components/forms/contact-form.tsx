@@ -3,7 +3,7 @@
 import { type z } from "zod";
 import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactSchema } from "./contact/schema";
+import { contactSchema } from "./schema/contact";
 import { usePathname } from "next/navigation";
 
 import {
