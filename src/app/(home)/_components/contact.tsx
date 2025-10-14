@@ -29,6 +29,7 @@ export default function Contact() {
             <Link
               prefetch={false}
               href={CV_LINK}
+              target='_blank'
             >
               <DownloadIcon size={16} /> Maybe download my CV?
             </Link>

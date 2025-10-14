@@ -68,6 +68,7 @@ export default function Navbar() {
             <Link
               prefetch={false}
               href={CV_LINK}
+              target='_blank'
             >
               CV
             </Link>

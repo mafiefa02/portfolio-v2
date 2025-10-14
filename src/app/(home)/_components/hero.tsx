@@ -45,6 +45,7 @@ export default function Hero() {
             <Link
               prefetch={false}
               href={CV_LINK}
+              target='_blank'
             >
               <DownloadIcon size={16} /> See CV
             </Link>
