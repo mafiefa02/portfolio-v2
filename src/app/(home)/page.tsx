@@ -3,6 +3,8 @@ import Contact from './_components/contact';
 import Hero from './_components/hero';
 import Works from './_components/works';
 
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <main className='space-y-28 py-12'>
