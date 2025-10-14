@@ -9,7 +9,7 @@ export const emailRouter = createTRPCRouter({
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { data, error } = await resend.emails.send({
-      from: 'portfolio@resend.dev',
+      from: 'mail@afiefabd.com',
       to: ['mafiefa.business@gmail.com'],
       subject: `[Personal Portfolio] ${input.name}`,
       react: EmailTemplate(input),
