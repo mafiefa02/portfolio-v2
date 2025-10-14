@@ -8,6 +8,7 @@ import Greetings from './hero/greetings';
 import HobbyIcons from './hero/hobby-icons';
 import ProfileColor from './hero/profile-color';
 import ProfileImage from './hero/profile-image';
+import { CV_LINK } from '-/lib/constants';
 
 export default function Hero() {
   return (
@@ -43,9 +44,7 @@ export default function Hero() {
           >
             <Link
               prefetch={false}
-              href={
-                'https://drive.google.com/file/d/13qXmDlpbQRNodQUq5BI2FV713nw_Gjws/view?usp=sharing'
-              }
+              href={CV_LINK}
             >
               <DownloadIcon size={16} /> See CV
             </Link>

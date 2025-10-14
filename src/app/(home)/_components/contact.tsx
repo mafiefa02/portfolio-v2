@@ -3,6 +3,7 @@ import TextH1 from '-/components/ui/typography/h1';
 import TextP from '-/components/ui/typography/p';
 import { DownloadIcon } from 'lucide-react';
 import Link from 'next/link';
+import { CV_LINK } from '-/lib/constants';
 import React from 'react';
 
 import ContactField from './contact/field';
@@ -27,9 +28,7 @@ export default function Contact() {
           >
             <Link
               prefetch={false}
-              href={
-                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
-              }
+              href={CV_LINK}
             >
               <DownloadIcon size={16} /> Maybe download my CV?
             </Link>

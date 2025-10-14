@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import NavbarDropdown from './navbar/dropdown';
+import { CV_LINK } from '-/lib/constants';
 
 const menus = [
   {
@@ -66,9 +67,7 @@ export default function Navbar() {
           >
             <Link
               prefetch={false}
-              href={
-                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
-              }
+              href={CV_LINK}
             >
               CV
             </Link>
