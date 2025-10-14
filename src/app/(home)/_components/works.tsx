@@ -16,8 +16,19 @@ import React from 'react';
 
 import WorkDetails from './works/details';
 import WorkThumbnail from './works/thumbnail';
+import { StaticImageData } from 'next/image';
 
-const works = [
+type Works = {
+  title: string;
+  stacks: string[];
+  time: string;
+  type: string;
+  description: string;
+  link: string | undefined;
+  image: StaticImageData;
+};
+
+const works: Works[] = [
   {
     title: 'IS HIMAFI ITB',
     stacks: ['Next.js', 'tRPC', 'Tailwind', 'Prisma', 'MySQL'],
@@ -67,7 +78,7 @@ export default function Works() {
         <CarouselContent>
           {works.map((work, i) => (
             <CarouselItem
-              key={i}
+              key={`${i}-${work.title}`}
               className='relative mt-16 flex flex-col items-center justify-center gap-8 overflow-visible'
             >
               <WorkThumbnail
