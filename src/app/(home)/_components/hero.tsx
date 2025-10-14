@@ -44,10 +44,10 @@ export default function Hero() {
             <Link
               prefetch={false}
               href={
-                'https://file-afief.toscamedia.net/CV_ATS_SoftwareEngineering-Websites.pdf'
+                'https://drive.google.com/file/d/13qXmDlpbQRNodQUq5BI2FV713nw_Gjws/view?usp=sharing'
               }
             >
-              <DownloadIcon size={16} /> Download CV
+              <DownloadIcon size={16} /> See CV
             </Link>
           </Button>
 
